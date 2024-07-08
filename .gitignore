@@ -1,0 +1,22 @@
+# Dependency directories
+/node_modules
+
+# Production build
+/build
+
+# Logs and runtime data
+/logs
+*.log
+npm-debug.log*
+
+# Environment variables
+.env
+
+# IDE or editor-specific files
+.vscode
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
