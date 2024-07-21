@@ -41,7 +41,30 @@ const getCartById = async (req, res) => {
       return res.status(404).json({ message: "Cart not found" });
     }
 
-    res.json(userCart);
+
+    const simplifiedProducts = userCart.products.map((product) => {
+      return {
+        productId: product.productId._id,
+        name: product.productId.name,
+        description: product.productId.description,
+        price: product.productId.price,
+        category: product.productId.category,
+        imageUrl: product.productId.imageUrl,
+        createdAt: product.productId.createdAt,
+        quantity: product.quantity,
+      };
+    });
+
+    // Construct the response object
+    const response = {
+      _id: userCart._id,
+      userId: userCart.userId,
+      products: simplifiedProducts,
+      createdAt: userCart.createdAt,
+      __v: userCart.__v,
+    };
+
+    res.json(response);
   } catch (error) {
     console.error("Error fetching cart by userId:", error); // Debug log
     res.status(500).json({ message: "Server error", error: error.message });

@@ -1,0 +1,146 @@
+<!-- views/documentation.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Documentation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      padding: 20px;
+    }
+
+    .api-section {
+      margin-bottom: 40px;
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .api-title {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .endpoint {
+      margin-bottom: 20px;
+    }
+
+    .endpoint-path {
+      font-weight: bold;
+    }
+
+    .endpoint-description {
+      margin-top: 5px;
+    }
+
+    .request-body {
+      margin-top: 10px;
+      background-color: #f0f0f0;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .example-code {
+      background-color: #f9f9f9;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>API Documentation</h1>
+
+  <div class="api-section">
+    <h2 class="api-title">User API</h2>
+
+    <div class="endpoint">
+      <p class="endpoint-path">POST /api/user</p>
+      <p class="endpoint-description">Creates a new user.</p>
+      <div class="request-body">
+        <p>Request Body:</p>
+        <pre>
+{
+  "name": "John Doe",
+  "email": "johndoe@example.com",
+  "password": "password123",
+  "address": "123 Street, City",
+  "phone": "1234567890"
+}
+                </pre>
+      </div>
+    </div>
+
+    <div class="endpoint">
+      <p class="endpoint-path">GET /api/users</p>
+      <p class="endpoint-description">Retrieves all users.</p>
+    </div>
+
+    <!-- Add other endpoints for User API here -->
+
+  </div>
+
+  <div class="api-section">
+    <h2 class="api-title">Product API</h2>
+
+    <div class="endpoint">
+      <p class="endpoint-path">POST /api/addproduct</p>
+      <p class="endpoint-description">Creates a new product.</p>
+      <div class="request-body">
+        <p>Request Body (form-data):</p>
+        <pre>
+- Key: `name`, Value: `Product Name`
+- Key: `description`, Value: `Product Description`
+- Key: `price`, Value: `10.99`
+- Key: `category`, Value: `Category`
+- Key: `stock`, Value: `100`
+- Key: `image`, Value: `<image file>`
+                </pre>
+      </div>
+    </div>
+
+    <div class="endpoint">
+      <p class="endpoint-path">GET /api/products</p>
+      <p class="endpoint-description">Retrieves all products.</p>
+    </div>
+
+    <!-- Add other endpoints for Product API here -->
+
+  </div>
+
+  <div class="api-section">
+    <h2 class="api-title">User Cart API</h2>
+
+    <div class="endpoint">
+      <p class="endpoint-path">POST /api/cart</p>
+      <p class="endpoint-description">Adds a product to the user's cart.</p>
+      <div class="request-body">
+        <p>Request Body:</p>
+        <pre>
+{
+  "userId": "12345",
+  "productId": "54321",
+  "quantity": 1
+}
+                </pre>
+      </div>
+    </div>
+
+    <div class="endpoint">
+      <p class="endpoint-path">GET /api/cart/:userId</p>
+      <p class="endpoint-description">Retrieves the cart for a user by userId.</p>
+    </div>
+
+    <!-- Add other endpoints for User Cart API here -->
+
+  </div>
+
+</body>
+
+</html>

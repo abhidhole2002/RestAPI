@@ -15,8 +15,10 @@ dotenv.config({ path: "./.env" });
 const connectToDatabase = require("./connection");
 connectToDatabase();
 
+app.set("view engine", "ejs");
+
 app.get("/", (req, res) => {
-  res.json({ message: "Hello from backend !" });
+  res.render("home.ejs");
 });
 
 // routers
